@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catalogo{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block javascripts %}{% endblock %}
+
+{% block body %}
+
+    <h1>Ficha del libros</h1>
+
+    <p>Título: {{ fondo.titulo }}</p>
+    <p>ISBN: {{ fondo.ISBN }}</p>
+    <p>Editorial: {{ fondo.editorial.nombre }}</p>
+    <p>Autor principal: {{ fondo.autores[0].nombre }}</p>
+
+    <p>Autores:
+        {% for autor in fondo.autores %}
+        <div>Nombre: {{ autor.nombre }}</div>
+        <div>Tipo: {{ autor.tipo }}</div>
+        {% else %}
+        <div>Nombre: {{ Anónimo }}</div>
+        <div>Tipo: {{ Desconocido }}</div>
+        {% endfor %}
+     </p>
+
+    <p> {{ fondo.editorial.nombre }}</p>
+
+{% endblock %}

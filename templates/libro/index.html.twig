@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Libros{% endblock %}
+
+{% block body %}
+<div class="book-table">
+    <h1>Lista de libros</h1>
+
+    <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Editorial</th>
+            </tr>
+            </thead>
+            
+            <tbody>
+                {% for libro in libros %}
+                <tr>
+                    <td>{{ libro.id }}</td>
+                    <td>{{ libro.titulo }}</td>
+                    {# <td>{{ libro.autores[0].nombre }}</td> #}
+                    <td>{{ libro.editorial.nombre }}</td>
+                    <td><a class="nav-link" href="{{ path('libro_lectura', {id: libro.id}) }}">Ver</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ficha autor{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block javascripts %}{% endblock %}
+
+{% block body %}
+
+    <h1>Ficha del Autor</h1>
+
+    <p>Nombre: {{ autor.nombre }}</p>
+    <p>Tipo: {{ autor.tipo }}</p>
+
+    <td><a class="nav-link" href="{{ path('autor_escritura', {id: autor.id}) }}">Modificar</a></td>
+
+    <td><a class="nav-link" href="{{ path('autor_eliminar', {id: autor.id}) }}">Eliminar</a></td>
+
+    <td><a class="nav-link" href="{{ path('autor') }}">Volver</a></td>
+
+{% endblock %}

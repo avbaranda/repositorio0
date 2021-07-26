@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulario de modificacion de autor{% endblock %}
+
+{% block body %}
+
+<form method="POST" action="{{ path('autor_modificar', {id: autor.id}) }}">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">
+        Name
+      </label>
+      <input type="text" name="nombre" value="{{ autor.nombre }}" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+    </div>
+    
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">
+        Type
+      </label>
+      <select name="tipo" class="form-control" id="exampleInputType">
+        <option value='PERSONA'>Persona</option>
+        <option value='ENTIDAD'>Entidad</option>
+        <option value='CONGRESO'>Congreso</option>
+      </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">
+      Guardar
+    </button>
+</form>
+
+<td><a class="nav-link" href="{{ path('autor_lectura', {id: autor.id}) }}">Volver</a></td>
+
+{% endblock %}

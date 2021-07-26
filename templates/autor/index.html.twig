@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Autores{% endblock %}
+
+{% block body %}
+<div class="book-table">
+    <h1>Lista de Autores</h1>
+
+    <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for autor in autores %}
+                <tr>
+                    <td>{{ autor.id }}</td>
+                    <td>{{ autor.nombre }}</td>
+                    <td>{{ autor.Tipo }}</td>
+                    <td><a class="nav-link" href="{{ path('autor_lectura', {id: autor.id}) }}">Ver</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+        <td><a class="nav-link" href="{{ path('autor_nuevo') }}">Nuevo</a></td>
+</div>
+{% endblock %}
