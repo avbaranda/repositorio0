@@ -7,5 +7,5 @@ kernel:
     type: annotation
 
 casa:
-    resource: ../../src/Hogar.php
+    resource: ../../src/Casa.php
     type: annotation
