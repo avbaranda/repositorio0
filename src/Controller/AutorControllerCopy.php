@@ -20,8 +20,8 @@ class AutorController extends AbstractController
     {
         $autores = $buscador->findAll();
 
-        $numero = 1;
-        $numero += 1;
+        $numeros = 1;
+        $numeros += 1;
 
         return $this->render('autor/index.html.twig', [
             'autores' => $autores
